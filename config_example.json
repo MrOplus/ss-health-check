@@ -1,0 +1,31 @@
+{
+  "servers" : [
+    {
+      "type": "ssr",
+      "address" : "",
+      "port" : 443,
+      "password" : "",
+      "encryption": "",
+      "obfs" : "",
+      "obfs-param" : "",
+      "protocol": "",
+      "protocol-param" :  ""
+    },
+    {
+      "type": "ss",
+      "address" : "",
+      "port" : 1234,
+      "password" : "",
+      "encryption": ""
+    }
+  ],
+  "callbacks":[
+    {
+      "type": "webhook",
+      "url": "https://api.telegram.org/bottoken/sendMessage",
+      "method": "POST",
+      "params" : "chat_id=123456&text=the following server is down %s",
+      "auth": null
+    }
+  ]
+}
