@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"github.com/DavidGamba/go-getoptions"
 	"github.com/kooroshh/bridge/adapter/outbound"
+	"github.com/kooroshh/ss-health-check/alert"
+	"github.com/kooroshh/ss-health-check/config"
+	"github.com/kooroshh/ss-health-check/healthcheck"
+	"github.com/kooroshh/ss-health-check/parser"
 	"io/ioutil"
 	"os"
-	"ss-health-check/alert"
-	"ss-health-check/config"
-	"ss-health-check/healthcheck"
-	"ss-health-check/parser"
 	"sync"
 )
 var wg sync.WaitGroup

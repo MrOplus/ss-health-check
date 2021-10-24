@@ -2,8 +2,8 @@ package parser
 
 import (
 	"errors"
-	"ss-health-check/config"
-	"ss-health-check/models"
+	"github.com/kooroshh/ss-health-check/config"
+	"github.com/kooroshh/ss-health-check/models"
 	"strings"
 )
 

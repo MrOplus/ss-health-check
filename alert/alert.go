@@ -3,10 +3,10 @@ package alert
 import (
 	"context"
 	"fmt"
+	"github.com/kooroshh/ss-health-check/config"
 	"net/http"
 	"net/url"
 	"os"
-	"ss-health-check/config"
 	"strings"
 	"time"
 )

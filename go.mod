@@ -1,4 +1,4 @@
-module ss-health-check
+module github.com/kooroshh/ss-health-check
 
 go 1.17
 

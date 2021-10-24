@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 	"github.com/kooroshh/bridge/constant"
+	"github.com/kooroshh/ss-health-check/alert"
+	"github.com/kooroshh/ss-health-check/config"
 	"math/rand"
 	"os"
-	"ss-health-check/alert"
-	"ss-health-check/config"
 	"sync"
 	"time"
 )
