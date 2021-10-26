@@ -30,13 +30,16 @@ func (h HealthCheck) StartMonitoring(wg *sync.WaitGroup,callbacks *[]config.Call
 			fmt.Fprintf(os.Stdout,"got response with %dms delay using %s:%d\n" ,latency,h.Config["server"],h.Config["port"])
 			failed = 0
 		}
-		if failed == 3 {
-			h.callHooks(*callbacks)
-			break
-		}
 		rand.Seed(time.Now().UnixNano())
 		sleepDuration := time.Duration(randInt(30,60)) * time.Second
-		fmt.Fprintf(os.Stdout,"Going to Sleep %s:%d with %.1f seconds\n",h.Config["server"],h.Config["port"],sleepDuration.Seconds())
+		if failed == 3 {
+			h.callHooks(*callbacks)
+			sleepDuration = 15 * time.Minute
+			fmt.Fprintf(os.Stdout,"Panic Sleep %s:%d with %.1f seconds\n",h.Config["server"],h.Config["port"],sleepDuration.Minutes())
+			failed = 0
+		}else{
+			fmt.Fprintf(os.Stdout,"Going to Sleep %s:%d with %.1f seconds\n",h.Config["server"],h.Config["port"],sleepDuration.Seconds())
+		}
 		time.Sleep(sleepDuration)
 	}
 	wg.Done()
