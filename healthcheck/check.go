@@ -35,7 +35,7 @@ func (h HealthCheck) StartMonitoring(wg *sync.WaitGroup,callbacks *[]config.Call
 		if failed == 3 {
 			h.callHooks(*callbacks)
 			sleepDuration = 15 * time.Minute
-			fmt.Fprintf(os.Stdout,"Panic Sleep %s:%d with %.1f seconds\n",h.Config["server"],h.Config["port"],sleepDuration.Minutes())
+			fmt.Fprintf(os.Stdout,"Panic Sleep %s:%d with %.1f Minuets\n",h.Config["server"],h.Config["port"],sleepDuration.Minutes())
 			failed = 0
 		}else{
 			fmt.Fprintf(os.Stdout,"Going to Sleep %s:%d with %.1f seconds\n",h.Config["server"],h.Config["port"],sleepDuration.Seconds())
